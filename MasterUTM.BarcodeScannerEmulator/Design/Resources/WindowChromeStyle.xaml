@@ -1,0 +1,141 @@
+﻿<ResourceDictionary x:Class="MasterUTM.BarcodeScannerEmulator.Design.Resources.WindowChromeStyle"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Form.Background" Color="Snow"/>
+    <Visibility x:Key="MaximizeVisibility">Visible</Visibility>
+    <Visibility x:Key="RestoreVisibility">Collapsed</Visibility>
+    <Visibility x:Key="IconVisibility">Visible</Visibility>
+
+    <Style x:Key="CustomWindowStyle" TargetType="{x:Type Window}">
+        <Style.Resources>
+            <SolidColorBrush x:Key="Form.BorderBrush" Color="Gray"/>
+            <SolidColorBrush x:Key="Form.Header.Background" Color="IndianRed"/>
+            <SolidColorBrush x:Key="Form.Header.Foreground" Color="White"/>
+            <Style x:Key="maximizeButton.Style" TargetType="Button"  BasedOn="{StaticResource ButtonCustom2}"/>
+            <Style x:Key="minimizeButton.Style" TargetType="Button"  BasedOn="{StaticResource ButtonCustom2}"/>
+        </Style.Resources>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="30"
+                              CornerRadius="0"
+                              GlassFrameThickness="0"
+                              NonClientFrameEdges="None"
+                              ResizeBorderThickness="5"
+                              UseAeroCaptionButtons="False" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Background" Value="Gray" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Grid>
+                        <Border Background="{StaticResource Form.Background}"
+                                BorderBrush="{DynamicResource Form.BorderBrush}"
+                                BorderThickness="1">
+                            <AdornerDecorator>
+                                <ContentPresenter Margin="0,35,0,0" />
+                            </AdornerDecorator>
+                        </Border>
+
+                        <Border BorderBrush="{DynamicResource Form.BorderBrush}"
+                                BorderThickness="1">
+                            <DockPanel Name="FormHeader" 
+                                       Background="{StaticResource Form.Header.Background}" 
+                                       Height="35"
+                                       VerticalAlignment="Top"
+                                       LastChildFill="False">
+
+                                <Button DockPanel.Dock="Right"
+                                        x:Name="closeButton"
+                                        Style="{DynamicResource ButtonCustom2}"
+                                        VerticalAlignment="Bottom"
+                                        Margin="3,0,2,1"
+                                        Width="40"
+                                        Height="35"
+                                        Foreground="White"
+                                        Content="X"
+                                        Click="CloseClick"
+                                        WindowChrome.IsHitTestVisibleInChrome="True"/>
+
+                                <Button DockPanel.Dock="Right"
+                                        x:Name="maximizeButton"
+                                        Style="{DynamicResource maximizeButton.Style}"
+                                        VerticalAlignment="Bottom"
+                                        Margin="3,0,3,1"
+                                        Width="40"
+                                        Height="35"
+                                        Foreground="White"
+                                        Click="MaximizeRestoreClick"
+                                        WindowChrome.IsHitTestVisibleInChrome="True">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Visibility="{DynamicResource MaximizeVisibility}"
+                                               Source="pack://application:,,,/Design/Images/maximize_icon.png"
+                                               Height="14"
+                                               Width="14"/>
+                                        <Image Visibility="{DynamicResource RestoreVisibility}"
+                                               Source="pack://application:,,,/Design/Images/restore_icon.png"
+                                               Height="14"
+                                               Width="14"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button DockPanel.Dock="Right"
+                                        x:Name="minimizeButton"
+                                        Style="{DynamicResource minimizeButton.Style}"
+                                        VerticalAlignment="Bottom"
+                                        Margin="3,0,3,1"
+                                        Width="40"
+                                        Height="35"
+                                        Foreground="White"
+                                        Content="_"
+                                        Click="MinimizeClick"
+                                        WindowChrome.IsHitTestVisibleInChrome="True"/>
+
+                                <Image DockPanel.Dock="Left"
+                                       Visibility="{DynamicResource IconVisibility}"
+                                       Margin="10,0,0,0"
+                                       RenderOptions.BitmapScalingMode="HighQuality"
+                                       Source="pack://application:,,,/Design/Images/icon.png"
+                                       Height="20"
+                                       Width="20"/>
+
+                                <TextBlock DockPanel.Dock="Left"
+                                           Margin="10,0,5,0"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource Form.Header.Foreground}"
+                                           Text="{TemplateBinding Title}"/>
+                                
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Window.IsActive" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="FormHeader" Property="Background" Value="DarkGray"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DialogCustomWindow" BasedOn="{StaticResource CustomWindowStyle}" TargetType="Window">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+        <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+        <Setter Property="ShowInTaskbar" Value="True"/>
+        <Style.Resources>
+            <Style x:Key="maximizeButton.Style" TargetType="Button"  BasedOn="{StaticResource ButtonCustom_Collapsed}"/>
+            <Style x:Key="minimizeButton.Style" TargetType="Button"  BasedOn="{StaticResource ButtonCustom_Collapsed}"/>
+            <Visibility x:Key="IconVisibility">Collapsed</Visibility>
+        </Style.Resources>
+    </Style>
+    
+    
+</ResourceDictionary>

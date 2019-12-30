@@ -1,0 +1,42 @@
+﻿<Window x:Class="MasterUTM.BarcodeScannerEmulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:infr="clr-namespace:MasterUTM.BarcodeScannerEmulator.Infrastructure;assembly=MasterUTM.BarcodeScannerEmulator.Infrastructure"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:vm="clr-namespace:MasterUTM.BarcodeScannerEmulator.ViewModels"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
+        Title="АО &quot;ЦЕНТРИНФОРМ&quot; - Эмулятор сканера штрихкода для программ Мастер УТМ"
+        Height="550" Width="850"
+        MinHeight="300" MinWidth="550"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource CustomWindowStyle}">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <ContentControl x:Name="mainRegionContent"
+                                Focusable="False"
+                                prism:RegionManager.RegionName="{x:Static infr:RegionNames.MainRegion}"/>
+            </Grid>
+
+            <dxg:GridControl Visibility="Hidden"
+                             Height="100">
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn/>
+                </dxg:GridControl.Columns>
+            </dxg:GridControl>
+        </Grid>
+    </ScrollViewer>
+    
+</Window>

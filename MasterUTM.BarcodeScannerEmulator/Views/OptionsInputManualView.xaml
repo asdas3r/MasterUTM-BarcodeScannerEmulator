@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="MasterUTM.BarcodeScannerEmulator.Views.OptionsInputManualView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"  
+             xmlns:vm="clr-namespace:MasterUTM.BarcodeScannerEmulator.ViewModels"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance vm:OptionsInputManualViewModel}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Margin="15"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Text="Настройки ручного ввода"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Margin="10"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Text="Введено штрихкодов:"/>
+            <StackPanel Grid.Row="0" Grid.Column="1"
+                        Orientation="Horizontal"
+                        x:Name="BarcodeManualInput">
+                <dxe:TextEdit Margin="10" 
+                              VerticalAlignment="Center"
+                              EditValueType="{x:Type sys:Int32}"
+                              EditValue="{Binding BarcodesInCollection, 
+                                         UpdateSourceTrigger=PropertyChanged,
+                                         Mode=OneWay, 
+                                         ValidatesOnDataErrors=True}"
+                              Width="60"
+                              HorizontalContentAlignment="Right"
+                              IsReadOnly="True"
+                              Foreground="Black"
+                              Background="White"/>
+                <Button Margin="10"
+                        VerticalAlignment="Center" 
+                        Style="{StaticResource ButtonCustom1}"
+                        Command="{Binding EditBarcodeListCommand}"
+                        Content="Изменить список"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

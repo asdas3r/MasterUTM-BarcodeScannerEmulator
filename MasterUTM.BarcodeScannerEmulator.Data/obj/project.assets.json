@@ -1,0 +1,352 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "Fare/2.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Fare.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Fare.dll": {}
+        }
+      },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net45/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Prism.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "MasterUTM.BarcodeScannerEmulator.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "Fare": "2.1.2"
+        },
+        "compile": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "Fare/2.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Fare.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Fare.dll": {}
+        }
+      },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net45/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Prism.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "MasterUTM.BarcodeScannerEmulator.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "Fare": "2.1.2"
+        },
+        "compile": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "Fare/2.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Fare.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Fare.dll": {}
+        }
+      },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net45/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Prism.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "MasterUTM.BarcodeScannerEmulator.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "Fare": "2.1.2"
+        },
+        "compile": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "Fare/2.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Fare.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Fare.dll": {}
+        }
+      },
+      "Prism.Core/7.2.0.1422": {
+        "type": "package",
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/net45/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Prism.dll": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net47/System.ValueTuple.dll": {}
+        },
+        "runtime": {
+          "lib/net47/System.ValueTuple.dll": {}
+        }
+      },
+      "MasterUTM.BarcodeScannerEmulator.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "Fare": "2.1.2"
+        },
+        "compile": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MasterUTM.BarcodeScannerEmulator.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fare/2.1.2": {
+      "sha512": "QHhkN5CsH7WZb1C6j/xsXyMJ+4OdNY6+pRrOMliGeZ/yGE9EHhEB1oVcRlSBl1D5CFWU02mZBYimTgOHubyipQ==",
+      "type": "package",
+      "path": "fare/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fare.2.1.2.nupkg.sha512",
+        "fare.nuspec",
+        "lib/net35/Fare.dll",
+        "lib/net35/Fare.xml",
+        "lib/netstandard1.1/Fare.dll",
+        "lib/netstandard1.1/Fare.xml"
+      ]
+    },
+    "Prism.Core/7.2.0.1422": {
+      "sha512": "U6tZ4Iq+ELyK5PedRC6E20caZXXTmTYiw5evpv0M3WcfKgih9H5G5LDBlDl+65eC5Vb4lnOaUCAtckdEl2MRxA==",
+      "type": "package",
+      "path": "prism.core/7.2.0.1422",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Prism.dll",
+        "lib/net45/Prism.pdb",
+        "lib/net45/Prism.xml",
+        "lib/netcoreapp3.0/Prism.dll",
+        "lib/netcoreapp3.0/Prism.pdb",
+        "lib/netcoreapp3.0/Prism.xml",
+        "lib/netstandard2.0/Prism.dll",
+        "lib/netstandard2.0/Prism.pdb",
+        "lib/netstandard2.0/Prism.xml",
+        "prism.core.7.2.0.1422.nupkg.sha512",
+        "prism.core.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "MasterUTM.BarcodeScannerEmulator.Core/1.0.0": {
+      "type": "project",
+      "path": "../MasterUTM.BarcodeScannerEmulator.Core/MasterUTM.BarcodeScannerEmulator.Core.csproj",
+      "msbuildProject": "../MasterUTM.BarcodeScannerEmulator.Core/MasterUTM.BarcodeScannerEmulator.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "Fare >= 2.1.2",
+      "MasterUTM.BarcodeScannerEmulator.Core >= 1.0.0",
+      "Prism.Core >= 7.2.0.1422"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\MasterUTM.BarcodeScannerEmulator\\MasterUTM.BarcodeScannerEmulator.Data\\MasterUTM.BarcodeScannerEmulator.Data.csproj",
+      "projectName": "MasterUTM.BarcodeScannerEmulator.Data",
+      "projectPath": "C:\\Users\\Admin\\source\\repos\\MasterUTM.BarcodeScannerEmulator\\MasterUTM.BarcodeScannerEmulator.Data\\MasterUTM.BarcodeScannerEmulator.Data.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\source\\repos\\MasterUTM.BarcodeScannerEmulator\\MasterUTM.BarcodeScannerEmulator.Data\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {
+            "C:\\Users\\Admin\\source\\repos\\MasterUTM.BarcodeScannerEmulator\\MasterUTM.BarcodeScannerEmulator.Core\\MasterUTM.BarcodeScannerEmulator.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\source\\repos\\MasterUTM.BarcodeScannerEmulator\\MasterUTM.BarcodeScannerEmulator.Core\\MasterUTM.BarcodeScannerEmulator.Core.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "Fare": {
+            "target": "Package",
+            "version": "[2.1.2, )"
+          },
+          "Prism.Core": {
+            "target": "Package",
+            "version": "[7.2.0.1422, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

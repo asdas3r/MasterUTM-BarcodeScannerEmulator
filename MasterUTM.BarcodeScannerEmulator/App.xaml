@@ -1,0 +1,22 @@
+﻿<prism:PrismApplication x:Class="MasterUTM.BarcodeScannerEmulator.App"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:prism="http://prismlibrary.com/"
+                        xmlns:conv="clr-namespace:MasterUTM.BarcodeScannerEmulator.Infrastructure.Converters;assembly=MasterUTM.BarcodeScannerEmulator.Infrastructure"
+                        Startup="Application_Startup">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <conv:BooleanToVisibilityConverter x:Key="boolToVisConv"/>
+            <conv:BooleanToVisibilityConverter x:Key="boolToVisInvConv" Reversed="True"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design/Resources/SplashScreenResources.xaml"/>
+                <ResourceDictionary Source="Design/Resources/ListViewResources.xaml"/>
+                <ResourceDictionary Source="Design/Resources/ButtonResources.xaml"/>
+                <ResourceDictionary Source="Design/Resources/WindowChromeStyle.xaml"/>
+                <ResourceDictionary Source="Design/Resources/dx_TableViewResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</prism:PrismApplication>

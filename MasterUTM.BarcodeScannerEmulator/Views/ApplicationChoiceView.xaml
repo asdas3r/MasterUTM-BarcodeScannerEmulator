@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="MasterUTM.BarcodeScannerEmulator.Views.ApplicationChoiceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:MasterUTM.BarcodeScannerEmulator.ViewModels"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance vm:ApplicationChoiceViewModel}"
+             Height="300" Width="550"
+             MinHeight="200" MinWidth="400"
+             Background="{StaticResource Form.Background}">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Margin="5">
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="16"
+                       Text="Выберите приложение для передачи ввода:"/>
+            <Button DockPanel.Dock="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Height="30"
+                    Style="{StaticResource ButtonCustom1}"
+                    Command="{Binding RefreshCommand}"
+                    Content="Обновить список"/>
+        </DockPanel>
+
+        <ListView Grid.Row="1"
+                  Margin="5"
+                  ItemsSource="{Binding ActiveProcesses}"
+                  SelectedItem="{Binding SelectedProcess}"
+                  Style="{DynamicResource NoItemsListView}"
+                  ItemTemplate="{DynamicResource ItemDataTemplate}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.Resources>
+                <DataTemplate x:Key="ItemDataTemplate" DataType="{x:Type ListViewItem}">
+                    <Grid Visibility="Visible" 
+                          Margin="0">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="5,0,5,0">
+                            <TextBlock Text="{Binding ProcessName}"
+                                       FontWeight="DemiBold"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding MainWindowTitle, StringFormat='[{0}]'}"
+                                       Margin="7,0,5,0"
+                                       FontWeight="Light"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button Name="SelectButton"
+                                Style="{StaticResource ButtonCustom3}"
+                                HorizontalAlignment="Right"
+                                Command="{Binding RelativeSource={RelativeSource
+                                          Mode=FindAncestor,
+                                          AncestorType={x:Type ListView}}, 
+                                          Path=DataContext.SetCurrentProcessCommand}"
+                                CommandParameter="{Binding}"
+                                Visibility="Hidden">
+                            <Button.Content>
+                                <TextBlock Margin="4"
+                                           Text="Выбрать"/>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                               Mode=FindAncestor,
+                                               AncestorType={x:Type ListViewItem}},
+                                               Path=IsSelected}" Value="True">
+                            <Setter TargetName="SelectButton" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+
+                <Style x:Key="NoItemsListView" TargetType="ListView">
+                    <Style.Setters>
+                        <Setter Property="BorderBrush" Value="DarkGray"/>
+                        <Setter Property="ItemContainerStyle" Value="{StaticResource ListViewCustom1}"/>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <Trigger Property="HasItems" Value="False">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListView}">
+                                        <Border BorderBrush="DarkGray"
+                                                BorderThickness="1"
+                                                Background="White">
+                                            <TextBlock Margin="10"
+                                                       HorizontalAlignment="Left"
+                                                       VerticalAlignment="Top"
+                                                       Text="Не удалось найти подходящих процессов."/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </ListView.Resources>
+
+            <ListView.InputBindings>
+                <KeyBinding Key="Return"
+                            Command="{Binding SetCurrentProcessCommand}"
+                            CommandParameter="{Binding SelectedProcess}"/>
+            </ListView.InputBindings>
+            
+        </ListView>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="MasterUTM.BarcodeScannerEmulator.Views.BarcodeInputView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:vm="clr-namespace:MasterUTM.BarcodeScannerEmulator.ViewModels"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance vm:BarcodeInputViewModel}"
+             Height="450" Width="600"
+             Background="{StaticResource Form.Background}">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0"
+                   Margin="5">
+            <Button DockPanel.Dock="Right"
+                    x:Name="AddButton"
+                    Style="{StaticResource ButtonCustom1}"
+                    Margin="10,0,0,0"
+                    Width="30"
+                    Height="30"
+                    Command="{Binding AddBarcodeCommand}"
+                    CommandParameter="{Binding Text, ElementName=InputTextBox}"
+                    Visibility="{Binding IsEditMode, 
+                                Converter={StaticResource boolToVisInvConv}}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <Image Source="pack://application:,,,/Design/Images/add_tick.png"
+                       Stretch="Fill"
+                       Height="16"
+                       Width="16"
+                       Margin="-5,-5,-5,-5"/>
+            </Button>
+            
+            <Button DockPanel.Dock="Right"
+                    x:Name="CancelButton"
+                    Style="{StaticResource ButtonCustom1}"
+                    Margin="10,0,0,0"
+                    Width="30"
+                    Height="30"
+                    Command="{Binding CancelEditBarcodeCommand}"
+                    Visibility="{Binding IsEditMode, 
+                                Converter={StaticResource boolToVisConv}}">
+                <Image Source="pack://application:,,,/Design/Images/cancel_tick.png"
+                       Stretch="Fill"
+                       Height="16"
+                       Width="16"
+                       Margin="-5,-5,-5,-5"/>
+            </Button>
+
+            <Button DockPanel.Dock="Right"
+                    x:Name="ConfirmButton"
+                    Style="{StaticResource ButtonCustom1}"
+                    Margin="10,0,0,0"
+                    Width="30"
+                    Height="30"
+                    Command="{Binding ConfirmEditBarcodeCommand}"
+                    CommandParameter="{Binding Text, ElementName=InputTextBox}"
+                    Visibility="{Binding IsEditMode, 
+                                Converter={StaticResource boolToVisConv}}">
+                <Image Source="pack://application:,,,/Design/Images/accept_tick.png"
+                       Stretch="Fill"
+                       Height="16"
+                       Width="16"
+                       Margin="-5,-5,-5,-5"/>
+            </Button>
+
+            <dxe:TextEdit Name="InputTextBox" 
+                          AcceptsReturn="False"
+                          AcceptsTab="False"
+                          Background="White"
+                          VerticalAlignment="Bottom"
+                          Height="30"
+                          VerticalContentAlignment="Center"
+                          EditValue="{Binding InputFieldText, 
+                                     UpdateSourceTrigger=PropertyChanged,
+                                     Mode=TwoWay}"/>
+        </DockPanel>
+
+        <Border Grid.Row="1" 
+                BorderBrush="LightGray">
+            <DockPanel Margin="5"
+                       Background="Snow"
+                       LastChildFill="False">
+                
+                <Button DockPanel.Dock="Right"
+                        x:Name="RemoveButton"
+                        Style="{StaticResource ButtonCustom1}"
+                        Margin="10,0,0,0"
+                        Command="{Binding RemoveBarcodeCommand}"
+                        Content="Удалить"/>
+
+                <Button DockPanel.Dock="Right"
+                        x:Name="EditButton"
+                        Style="{StaticResource ButtonCustom1}"
+                        Margin="10,0,0,0"
+                        Command="{Binding EditBarcodeCommand}"
+                        Content="Изменить"/>
+
+                <Button DockPanel.Dock="Left"
+                        x:Name="ImportButton"
+                        Style="{StaticResource ButtonCustom1}"
+                        Command="{Binding ImportCommand}"
+                        Content="Импорт из файла"/>
+
+            </DockPanel>
+        </Border>
+
+        <dxg:GridControl Grid.Row="2"
+                             Margin="5" 
+                             AutoGenerateColumns="AddNew"
+                             EnableSmartColumnsGeneration="False" 
+                             ItemsSource="{Binding BarcodeCollection}"
+                             SelectedItem="{Binding SelectedItem}"
+                             SelectionMode="None"
+                             AllowInitiallyFocusedRow="False">
+
+            <dxg:GridControl.View>
+                <dxg:TableView AllowPerPixelScrolling="True"
+                                   AutoWidth="True"
+                                   ShowColumnHeaders="False"
+                                   AllowDragDrop="False"
+                                   ShowGroupPanel="False"
+                                   ShowDataNavigator="True"
+                                   DataNavigatorButtons="Navigation"
+                                   AllowEditing="True"
+                                   EditorShowMode="MouseDownFocused"
+                                   AllowLeaveFocusOnTab="True"
+                                   CellStyle="{StaticResource dx_cellStyle1}"
+                                   VerticalScrollbarVisibility="Auto"
+                                   ShowIndicator="False"/>
+            </dxg:GridControl.View>
+
+            <dxg:GridControl.InputBindings>
+                <KeyBinding Key="Delete"
+                                Command="{Binding RemoveBarcodeCommand}"/>
+            </dxg:GridControl.InputBindings>
+
+        </dxg:GridControl>
+
+    </Grid>
+</UserControl>
