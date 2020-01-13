@@ -294,11 +294,7 @@
             },
             "System.Runtime.CompilerServices.Unsafe": {
               "target": "Package",
-              "version": "[4.6.0, )"
-            },
-            "System.Threading.Tasks.Extensions": {
-              "target": "Package",
-              "version": "[4.5.3, )"
+              "version": "[4.5.2, )"
             }
           }
         }

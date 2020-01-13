@@ -230,7 +230,3 @@ C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeSc
 C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\obj\Debug\MasterUTM.BarcodeScannerEmulator.csproj.CopyComplete
 C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\obj\Debug\MasterUTM.BarcodeScannerEmulator.exe
 C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\obj\Debug\MasterUTM.BarcodeScannerEmulator.pdb
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\bin\Debug\MasterUTM.BarcodeScannerEmulator.exe.manifest
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\bin\Debug\MasterUTM.BarcodeScannerEmulator.application
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\obj\Debug\MasterUTM.BarcodeScannerEmulator.exe.manifest
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator\obj\Debug\MasterUTM.BarcodeScannerEmulator.application

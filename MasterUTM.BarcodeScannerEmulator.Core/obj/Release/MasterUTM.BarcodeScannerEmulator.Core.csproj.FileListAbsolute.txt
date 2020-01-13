@@ -1,6 +1,0 @@
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator.Core\bin\Release\MasterUTM.BarcodeScannerEmulator.Core.dll
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator.Core\bin\Release\Fare.dll
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator.Core\obj\Release\MasterUTM.BarcodeScannerEmulator.Core.Properties.Resources.resources
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator.Core\obj\Release\MasterUTM.BarcodeScannerEmulator.Core.csproj.GenerateResource.cache
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator.Core\obj\Release\MasterUTM.BarcodeScannerEmulator.Core.csproj.CopyComplete
-C:\Users\Admin\source\repos\MasterUTM.BarcodeScannerEmulator\MasterUTM.BarcodeScannerEmulator.Core\obj\Release\MasterUTM.BarcodeScannerEmulator.Core.dll
